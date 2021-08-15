@@ -11,7 +11,7 @@ public class ViewMenu {
 		while(opc < 1 || opc > 3) {
 			System.out.println("1.Login");
 			System.out.println("2.Criar conta");
-			System.out.println("3.Finalizar");
+			System.out.println("0.Finalizar");
 			System.out.print("Digite: ");
 			opc = sc.nextInt();
 		}
@@ -58,9 +58,10 @@ public class ViewMenu {
 	public static int selecionaPlano() {
 		int plano = 0;
 		while(plano < 1 || plano > 3) {
-			System.out.println("Plano 1 | Acessos simultanios: 1 | Valor mensal: R$12,50 ");
-			System.out.println("Plano 2 | Acessos simultanios: 3 | Valor mensal: R$17,99 ");
-			System.out.println("Plano 3 | Acessos simultanios: 5 | Valor mensal: R$21,99 ");
+			System.out.println();
+			System.out.println("Plano 1 | Acessos simultâneos: 1 | Valor mensal: R$12,50 ");
+			System.out.println("Plano 2 | Acessos simultâneos: 3 | Valor mensal: R$17,99 ");
+			System.out.println("Plano 3 | Acessos simultâneos: 5 | Valor mensal: R$21,99 ");
 			System.out.print("Digite o plano (1, 2 ou 3): ");
 			plano = sc.nextInt();
 			if(plano < 1 || plano > 3) {

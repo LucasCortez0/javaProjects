@@ -18,8 +18,8 @@ public class ControllerLogin {
 	}
 	
 	public static void controlador() {
-		int opc = 0;
-		while(opc != 3) {
+		int opc = 1;
+		while(opc != 0) {
 			opc = ViewMenu.inicializador();
 			switch(opc) {
 			case 1:
@@ -76,6 +76,6 @@ public class ControllerLogin {
 		}
 		usuario.setPlano(plano);
 		usuarios.add(usuario);
-		ViewMenu.msg("Conta registrada!");
+		ViewMenu.msg("Conta registrada!\n");
 	}
 }
