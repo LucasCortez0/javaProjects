@@ -19,7 +19,9 @@ public class PlayList {
 			}
 		}
 	}
-	
+	public void removerMusicaInt(int num) {
+		musicas.remove(num);
+	}
 	public int tamanhoPlayList() {
 		return musicas.size();
 	}

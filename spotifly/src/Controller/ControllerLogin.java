@@ -18,7 +18,7 @@ public class ControllerLogin {
 	}
 	
 	public static void controlador() {
-		int opc = 1;
+		int opc = -1;
 		while(opc != 0) {
 			opc = ViewMenu.inicializador();
 			switch(opc) {
@@ -39,10 +39,10 @@ public class ControllerLogin {
 				if(usuarios.get(i).getSenha() == usuario.getSenha()) {
 					chamaUsuario(usuarios.get(i));
 				}else {
-					ViewMenu.msgErro("Senha invalida");
+					ViewMenu.msgErro("Senha invalida\n");
 				}
 			}else if(i + 1 == usuarios.size()) {
-				ViewMenu.msgErro("Usuario não encontrado");
+				ViewMenu.msgErro("Usuario não encontrado\n");
 			}
 		}
 	}

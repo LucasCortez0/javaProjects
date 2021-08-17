@@ -18,6 +18,9 @@ public class ViewUsuario {
 			System.out.println("0.Sair");
 			System.out.print("Digite: ");
 			opc = sc.nextInt();
+			if(opc < 0 || opc > 3) {
+				System.out.println("Opção inválida");
+			}
 		}
 		return opc;
 	}
@@ -45,6 +48,10 @@ public class ViewUsuario {
 
 	}
 	public static int viewAlbum(List<Musica> musicas) {
+		if(musicas.size() == 0) {
+			System.out.println("Este album não tem nenhuma musica :(");
+			return 0;
+		}
 		System.out.println();
 		System.out.println("Musicas do album:");
 		for(int i = 0; i < musicas.size(); i++) {
@@ -69,10 +76,10 @@ public class ViewUsuario {
 			System.out.println(i + 1 + ". " + albuns.get(i));
 		}
 		int operacao = 0;
-		while(operacao < 1 || operacao > albuns.size() + 1) {
+		while(operacao < 1 || operacao > albuns.size()) {
 			System.out.print("Digite o número do album para abrir: ");
 			operacao = sc.nextInt();
-			if(operacao < 1 || operacao > albuns.size() + 1) {
+			if(operacao < 1 || operacao > albuns.size()) {
 				System.out.println("Album não encontrado");
 			}
 		}

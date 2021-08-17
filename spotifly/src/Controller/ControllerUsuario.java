@@ -103,10 +103,15 @@ public class ControllerUsuario {
 	
 	public static void albuns() {
 		int albumEscolhido = ViewUsuario.viewAlbuns(albuns);
-		Album album = albuns.get(albumEscolhido - 1);
-		List<Musica> musicas = album.getMusicas().getListMusicas();
-		int numMusica = ViewUsuario.viewAlbum(musicas);
-		tocarMusicaAlbum(albumEscolhido, numMusica - 1, musicas);
+		if(albumEscolhido != 0) {
+			Album album = albuns.get(albumEscolhido - 1);
+			List<Musica> musicas = album.getMusicas().getListMusicas();
+			int numMusica = ViewUsuario.viewAlbum(musicas);
+			if(numMusica != 0) {
+				tocarMusicaAlbum(albumEscolhido, numMusica - 1, musicas);
+			}			
+		}
+		
 	}
 	
 	public static void tocarMusicaAlbum(int numAlbum, int musicaEscolhida, List<Musica> favoritas) {

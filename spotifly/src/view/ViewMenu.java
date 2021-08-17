@@ -7,13 +7,16 @@ import entities.Usuario;
 public class ViewMenu {
 	public static Scanner sc = new Scanner(System.in);
 	public static int inicializador() {
-		int opc = 0;
-		while(opc < 1 || opc > 3) {
+		int opc = -1;
+		while(opc < 0 || opc > 2) {
 			System.out.println("1.Login");
 			System.out.println("2.Criar conta");
 			System.out.println("0.Finalizar");
 			System.out.print("Digite: ");
 			opc = sc.nextInt();
+			if(opc < 0 || opc > 2) {
+				System.out.println("Comando desconhecido\n");
+			}
 		}
 		return opc;
 	}
