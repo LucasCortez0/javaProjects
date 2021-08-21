@@ -1,18 +1,20 @@
-package Controller;
+package br.com.spotifly.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import entities.Album;
-import entities.Artista;
-import entities.Musica;
-import entities.PlayList;
-import entities.Usuario;
-import view.ViewUsuario;
+import br.com.spotifly.entities.Album;
+import br.com.spotifly.entities.Artista;
+import br.com.spotifly.entities.Musica;
+import br.com.spotifly.entities.PlayList;
+import br.com.spotifly.entities.Usuario;
+import br.com.spotifly.view.ViewUsuario;
 
 public class ControllerUsuario {
+	
 	public static Usuario usuario;
-	public static List<Album> albuns = new ArrayList<>(); 
+	public static List<Album> albuns = new ArrayList<>();
+	
 	public ControllerUsuario() {
 		
 	}
@@ -21,6 +23,7 @@ public class ControllerUsuario {
 		usuario = user;
 		int opc = -1;
 		ViewUsuario.msg("|||||||||||S|P|O|T|I|F|L|Y|||||||||||");
+		ViewUsuario.msg("User: " + usuario.getNome());
 		while(opc != 0) {
 			opc = ViewUsuario.inicializador();
 			switch(opc) {
@@ -31,7 +34,7 @@ public class ControllerUsuario {
 				albuns();
 				break;
 			case 0:
-				ViewUsuario.msg("Sessão encerrada\n");
+				ViewUsuario.msg("Sessï¿½o encerrada\n");
 			}
 		}
 	}
@@ -84,7 +87,7 @@ public class ControllerUsuario {
 			
 			PlayList playlist2 = new PlayList();
 			Artista artista2 = new Artista("Junior do Rock", "Forro");
-			Musica musica21 = new Musica("aviões aquaticos", 2.4, artista2);
+			Musica musica21 = new Musica("aviï¿½es aquaticos", 2.4, artista2);
 			playlist2.addMusica(musica21);
 			Musica musica22 = new Musica("a mais pedida", 2.9, artista2);
 			playlist2.addMusica(musica22);
@@ -139,7 +142,7 @@ public class ControllerUsuario {
 				}else{
 					for(int i = 0; i < usuario.getTamanhoLista(); i++) {
 						if(usuario.getNomeMusica(i).equals(nome)) {
-							ViewUsuario.msgErro("Essa musica já está nas favoritas");
+							ViewUsuario.msgErro("Essa musica jï¿½ estï¿½ nas favoritas");
 							break;
 						}else if(i + 1 == usuario.getTamanhoLista()) {
 							usuario.addMusica(albuns.get(numAlbum).getMusicas().getMusica(musicaEscolhida));

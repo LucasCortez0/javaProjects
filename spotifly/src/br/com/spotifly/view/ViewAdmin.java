@@ -1,15 +1,17 @@
-package view;
+package br.com.spotifly.view;
 
 import java.util.List;
 import java.util.Scanner;
 
-import entities.Album;
-import entities.Artista;
-import entities.Musica;
-import entities.PlayList;
+import br.com.spotifly.entities.Album;
+import br.com.spotifly.entities.Artista;
+import br.com.spotifly.entities.Musica;
+import br.com.spotifly.entities.PlayList;
 
 public class ViewAdmin {
+	
 	public static Scanner sc = new Scanner(System.in);
+	
 	public static int selecionaOpc() {
 		int opc = -1;
 		while(opc < 0 || opc > 3) {

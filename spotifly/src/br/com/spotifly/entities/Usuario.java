@@ -1,9 +1,10 @@
-package entities;
+package br.com.spotifly.entities;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
+	
 	List<Musica> favoritas = new ArrayList<>(); 
 	private String nome;
 	private int numRegistro;
@@ -17,6 +18,7 @@ public class Usuario {
 		this.plano = plano;
 		this.senha = senha;
 	}
+	
 	public List<Musica> getFavoritas(){
 		return favoritas;
 	}

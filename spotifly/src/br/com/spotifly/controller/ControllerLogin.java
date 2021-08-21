@@ -1,15 +1,16 @@
-package Controller;
+package br.com.spotifly.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import entities.Plano;
-import entities.Usuario;
-import view.ViewMenu;
+import br.com.spotifly.entities.Plano;
+import br.com.spotifly.entities.Usuario;
+import br.com.spotifly.view.ViewMenu;
 
 public class ControllerLogin {
-	public static List<Usuario> usuarios;
 	
+	public static List<Usuario> usuarios;
+		
 	public static void inicializador() {
 		usuarios = new ArrayList<>();
 		Usuario usuario1 = new Usuario("admin", 0, 1234, null);
@@ -42,7 +43,7 @@ public class ControllerLogin {
 					ViewMenu.msgErro("Senha invalida\n");
 				}
 			}else if(i + 1 == usuarios.size()) {
-				ViewMenu.msgErro("Usuario não encontrado\n");
+				ViewMenu.msgErro("Usuario nï¿½o encontrado\n");
 			}
 		}
 	}

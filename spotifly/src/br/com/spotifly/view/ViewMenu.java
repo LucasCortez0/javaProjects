@@ -1,11 +1,14 @@
-package view;
+package br.com.spotifly.view;
 
 import java.util.Scanner;
 
-import entities.Usuario;
+import br.com.spotifly.entities.Usuario;
 
 public class ViewMenu {
+
 	public static Scanner sc = new Scanner(System.in);
+
+		
 	public static int inicializador() {
 		int opc = -1;
 		while(opc < 0 || opc > 2) {
@@ -22,7 +25,7 @@ public class ViewMenu {
 	}
 	
 	public static Usuario viewLogin() {
-		System.out.print("Informe o nome de usuário: ");
+		System.out.print("Informe o nome de usuario: ");
 		sc.nextLine();
 		String nome = sc.nextLine();
 		System.out.print("Informe a sua senha: ");
@@ -40,13 +43,13 @@ public class ViewMenu {
 	}
 	
 	public static Usuario criarConta() {
-		System.out.print("Informe o seu nome (também sera usado no login): ");
+		System.out.print("Informe o seu nome (tambem sera usado no login): ");
 		sc.nextLine();
 		String nome = sc.nextLine();
 		int senha1 = 0;
 		int senha2 = 1;
 		while(senha1 != senha2) {
-			System.out.print("Informe a sua senha: ");
+			System.out.print("Informe a sua senha(Apenas numeros entre " + Integer.MIN_VALUE + " e " + Integer.MAX_VALUE +"): ");
 			senha1 = sc.nextInt();
 			System.out.print("Digite a senha novamente: ");
 			senha2 = sc.nextInt();
@@ -62,13 +65,13 @@ public class ViewMenu {
 		int plano = 0;
 		while(plano < 1 || plano > 3) {
 			System.out.println();
-			System.out.println("Plano 1 | Acessos simultâneos: 1 | Valor mensal: R$12,50 ");
-			System.out.println("Plano 2 | Acessos simultâneos: 3 | Valor mensal: R$17,99 ");
-			System.out.println("Plano 3 | Acessos simultâneos: 5 | Valor mensal: R$21,99 ");
+			System.out.println("Plano 1 | Acessos simultaneos: 1 | Valor mensal: R$12,50 ");
+			System.out.println("Plano 2 | Acessos simultaneos: 3 | Valor mensal: R$17,99 ");
+			System.out.println("Plano 3 | Acessos simultaneos: 5 | Valor mensal: R$21,99 ");
 			System.out.print("Digite o plano (1, 2 ou 3): ");
 			plano = sc.nextInt();
 			if(plano < 1 || plano > 3) {
-				System.out.println("\nPlano não encontrado, você deve digita 1, 2 ou 3");
+				System.out.println("\nPlano nï¿½o encontrado, vocï¿½ deve digita 1, 2 ou 3");
 			}
 		}
 		return plano;

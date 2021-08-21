@@ -1,12 +1,13 @@
-package view;
+package br.com.spotifly.view;
 
 import java.util.List;
 import java.util.Scanner;
 
-import entities.Album;
-import entities.Musica;
+import br.com.spotifly.entities.Album;
+import br.com.spotifly.entities.Musica;
 
 public class ViewUsuario {
+	
 	public static Scanner sc = new Scanner(System.in);
 	
 	public static int inicializador() {
@@ -14,12 +15,12 @@ public class ViewUsuario {
 		while(opc < 0 || opc > 3) {
 			System.out.println();
 			System.out.println("1.Musicas Favoritas");
-			System.out.println("2.Mostrar Álbuns");
+			System.out.println("2.Mostrar albuns");
 			System.out.println("0.Sair");
 			System.out.print("Digite: ");
 			opc = sc.nextInt();
 			if(opc < 0 || opc > 3) {
-				System.out.println("Opção inválida");
+				System.out.println("Opco invalida");
 			}
 		}
 		return opc;
@@ -27,21 +28,21 @@ public class ViewUsuario {
 	
 	public static int viewFavoritas(List<Musica> favoritas) {
 		if(favoritas.size() < 1) {
-			System.out.println("Você ainda não tem musicas favoritas");
+			System.out.println("Voce ainda nao tem musicas favoritas");
 			return 0;
 		}
 		System.out.println();
-		System.out.println("as suas Músicas favoritas são: ");	
+		System.out.println("as suas Mï¿½sicas favoritas sï¿½o: ");	
 		int numMusica = -1;
 		while(numMusica < 0 || numMusica > favoritas.size() + 1) {
 			for(int i = 0; i < favoritas.size(); i++) {
 				System.out.println(i + 1 + ". " + favoritas.get(i));
 			}
 			System.out.println("0. voltar");
-			System.out.print("Digite o número da musica que deseja ouvir: ");
+			System.out.print("Digite o nï¿½mero da musica que deseja ouvir: ");
 			numMusica = sc.nextInt();
 			if(numMusica < 0 || numMusica > favoritas.size() + 1) {
-				System.out.println("Musica não encontrada");
+				System.out.println("Musica nï¿½o encontrada");
 			}
 		}
 		return numMusica;
@@ -49,7 +50,7 @@ public class ViewUsuario {
 	}
 	public static int viewAlbum(List<Musica> musicas) {
 		if(musicas.size() == 0) {
-			System.out.println("Este album não tem nenhuma musica :(");
+			System.out.println("Este album nï¿½o tem nenhuma musica :(");
 			return 0;
 		}
 		System.out.println();
@@ -60,10 +61,10 @@ public class ViewUsuario {
 		int numMusica = -1;
 		while(numMusica < 0 || numMusica > musicas.size() + 1) {
 			System.out.println("0. voltar");
-			System.out.print("Digite o número da musica que deseja ouvir: ");
+			System.out.print("Digite o nï¿½mero da musica que deseja ouvir: ");
 			numMusica = sc.nextInt();
 			if(numMusica < 0 || numMusica > musicas.size() + 1) {
-				System.out.println("Musica não encontrada");
+				System.out.println("Musica nï¿½o encontrada");
 			}
 		}
 		return numMusica;
@@ -77,10 +78,10 @@ public class ViewUsuario {
 		}
 		int operacao = 0;
 		while(operacao < 1 || operacao > albuns.size()) {
-			System.out.print("Digite o número do album para abrir: ");
+			System.out.print("Digite o nï¿½mero do album para abrir: ");
 			operacao = sc.nextInt();
 			if(operacao < 1 || operacao > albuns.size()) {
-				System.out.println("Album não encontrado");
+				System.out.println("Album nï¿½o encontrado");
 			}
 		}
 		return operacao;
@@ -94,7 +95,7 @@ public class ViewUsuario {
 			System.out.println("");
 			System.out.println("1. voltar musica");
 			System.out.println("2. adicionar musiac aos favoritos");
-			System.out.println("3. avançar musica");
+			System.out.println("3. avanï¿½ar musica");
 			System.out.println("0. voltar");
 			System.out.print("Digite: ");
 			opc = sc.nextInt();

@@ -1,4 +1,4 @@
-package entities;
+package br.com.spotifly.entities;
 
 import java.util.ArrayList;
 import java.util.List;

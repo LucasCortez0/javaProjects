@@ -1,6 +1,7 @@
-package entities;
+package br.com.spotifly.entities;
 
 public class Artista {
+
 	String nome;
 	String generoMusical;
 	

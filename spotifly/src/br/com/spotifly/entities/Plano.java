@@ -1,4 +1,4 @@
-package entities;
+package br.com.spotifly.entities;
 
 public class Plano {
 	private int tipoPlano;

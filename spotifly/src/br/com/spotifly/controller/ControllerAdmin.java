@@ -1,15 +1,16 @@
-package Controller;
+package br.com.spotifly.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import entities.Album;
-import entities.Artista;
-import entities.Musica;
-import entities.PlayList;
-import view.ViewAdmin;
+import br.com.spotifly.entities.Album;
+import br.com.spotifly.entities.Artista;
+import br.com.spotifly.entities.Musica;
+import br.com.spotifly.entities.PlayList;
+import br.com.spotifly.view.ViewAdmin;
 
 public class ControllerAdmin {
+	
 	public static List<Album> albuns = new ArrayList<>();
 	
 	public static void controlador() {
@@ -34,6 +35,7 @@ public class ControllerAdmin {
 			}
 		}
 	}
+	
 	public static void adicionarAlbum() {
 		Artista artista = ViewAdmin.adicionarArtista();
 		PlayList playlist = ViewAdmin.criaPlayList(artista);
@@ -71,7 +73,7 @@ public class ControllerAdmin {
 	}
 	public static int upload(int opc) {
 		if(albuns.size() == 0) {
-			ViewAdmin.msgErro("Upload não pode ser realizado, deve haver pelo menos 1 album");
+			ViewAdmin.msgErro("Upload nao pode ser realizado, deve haver pelo menos 1 album");
 			opc =-1;
 		}else {
 			int opcao = ViewAdmin.confirmacaoFinalizacao();
